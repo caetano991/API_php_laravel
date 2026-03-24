@@ -1,59 +1,111 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## 🚀 API REST com Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## API desenvolvida com o framework Laravel, com o objetivo de praticar construção de APIs RESTful utilizando boas práticas de back-end.
 
-## About Laravel
+## 📌 Tecnologias utilizadas
+PHP
+Laravel
+MySQL
+Eloquent ORM
+Thunder Client / Postman
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ⚙️ Funcionalidades
+✅ Criar registros (POST)
+📄 Listar registros (GET)
+✏️ Atualizar registros (PUT / PATCH)
+❌ Deletar registros (DELETE)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🗄️ Configuração do Banco de Dados
+1. Criar o banco de dados
+CREATE DATABASE api_laravel;
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ⚙️ Configuração do Projeto
+1. Clonar o repositório
+git clone <url-do-repositorio>
 
-## Learning Laravel
+2. Acessar o diretório
+cd nome-do-projeto
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+3. Instalar dependências
+composer install
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+4. Configurar o arquivo .env
+Copie o arquivo de exemplo:
+cp .env.example .env
 
-## Laravel Sponsors
+5. Edite as variáveis de banco de dados:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=api_laravel
+DB_USERNAME=root
+DB_PASSWORD=sua_senha
 
-### Premium Partners
+6. Gerar a chave da aplicação
+php artisan key:generate
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+8. Executar as migrations
+php artisan migrate
 
-## Contributing
+## ▶️ Rodando o projeto
+php artisan serve
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+A aplicação estará disponível em:
+http://127.0.0.1:8000
 
-## Code of Conduct
+## 🔗 Endpoints da API
+Método	   Endpoint	         Descrição
+GET	     /api/index	         Lista todos os registros
+GET	     /api/show/{id}      Exibe um registro
+POST	 /api/store 	     Cria um novo registro
+PUT      /api/update/{id}	 Atualiza um registro
+DELETE	 /api/delete/{id}    Remove um registro
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🧪 Testes
+A API pode ser testada utilizando:
+Thunder Client (VS Code)
+Postman
+Insomnia
+cURL
 
-## Security Vulnerabilities
+## 📂 Estrutura relevante
+app/
+ ├── Models/
+ │    └── Personagem.php
+ │
+ ├── Http/
+ │    ├── Controllers/
+ │    │    └── Api/
+ │    │         └── PersonagemController.php
+ │    │
+ │    └── Requests/
+ │
+database/
+ ├── migrations/
+ │    └── create_personagens_table.php
+ │
+routes/
+ └── api.php
+ 
+## ⚠️ Observações
+Projeto focado em aprendizado
+Utiliza padrão MVC do Laravel
+Estrutura preparada para evolução
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🎯 Objetivo
+Praticar:
 
-## License
+Criação de APIs REST com Laravel
+Uso do Eloquent ORM
+Estruturação em MVC
+Migrations e versionamento de banco
+Boas práticas de desenvolvimento
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 📈 Possíveis melhorias
+Implementar validação com Form Requests
+Adicionar autenticação (JWT ou Laravel Sanctum)
+Paginação de resultados
+Filtros e buscas avançadas
+Tratamento global de exceções
+Versionamento de API (/api/v1)
